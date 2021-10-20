@@ -64,14 +64,12 @@ function printComment(comment) {
       <h5 class="text-dark">${comment.writtenBy} commented on ${comment.createdAt}:</h5>
       <p>${comment.commentBody}</p>
       <div class="bg-dark ml-3 p-2 rounded" >
-        ${
-          comment.replies && comment.replies.length
-            ? `<h5>${comment.replies.length} ${
-                comment.replies.length === 1 ? 'Reply' : 'Replies'
-              }</h5>
+        ${comment.replies && comment.replies.length
+      ? `<h5>${comment.replies.length} ${comment.replies.length === 1 ? 'Reply' : 'Replies'
+      }</h5>
         ${comment.replies.map(printReply).join('')}`
-            : '<h5 class="p-1">No replies yet!</h5>'
-        }
+      : '<h5 class="p-1">No replies yet!</h5>'
+    }
       </div>
       <form class="reply-form mt-3" data-commentid='${comment._id}'>
         <div class="mb-3">
@@ -176,7 +174,7 @@ function handleNewReplySubmit(event) {
     });
 }
 
-$backBtn.addEventListener('click', function() {
+$backBtn.addEventListener('click', function () {
   window.history.back();
 });
 
